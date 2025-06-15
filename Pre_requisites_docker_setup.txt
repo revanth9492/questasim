@@ -1,0 +1,20 @@
+//mac sheel
+brew install --cask x quartz
+xhost + 127.0.0.1
+// to run Xquartz
+open -a XQuartz
+
+
+docker pull --platform=linux/amd64 ubuntu:20.04
+docker run -it --platform=linux/amd64 ubuntu:20.04 //casual run
+apt update && apt install -y libglib2.0-0 libX11-6 libXrender1 libXft2
+
+
+
+// GUI setup run
+docker run -it --platform=linux/amd64 -e DISPLAY=host.docker.internal:0 -v /tmp/.X11-unix:/tmp/.X11-unix <yourimage> 
+// Display lib install
+apt update && apt install -y x11-apps
+// to check the display
+xeyes
+
